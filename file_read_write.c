@@ -1,20 +1,17 @@
-
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
-
+#include <stdio.h>
 int main(){
-    FILE *fp;
-    char ch;
-    fp = fopen("C:\\Users\\akifc\\Desktop\\test.txt","r");
-    if(fp == NULL){
-        printf("Dosya acilamadi");
-        exit(1);
+    FILE *dosya =fopen("dosya.txt","a");
+    int sayi;
+    printf("bir sayi giriniz");
+    scanf("%d",&sayi);
+    if(sayi < 100){
+        fprintf(dosya,"%d\n",sayi);
+        fclose(dosya);
+        FILE *dosya=fopen("dosya.txt","r");
+        while(fscanf(dosya,"%d",&sayi) != EOF)
+            printf("%d\n",sayi);
     }
-    while((ch = fgetc(fp)) != EOF){
-        printf("%c",ch);
+    else{
+        printf("100 den küçük sayi giriniz");
     }
-    fclose(fp);
-    return 0;
 }
-

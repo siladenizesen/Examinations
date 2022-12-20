@@ -1,26 +1,34 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+union data{
+    char surname[100];
+    char name[100];
+    int age;
+};
 
-
-
-int main()
-{
-    typedef union
-    {
-        char ch;
-        int flag;
-        float ondalik;
-    } data;
+int main(){
+    union data veri;
     
-    data veri;
-    veri.ch = 'A';
-    printf("ch = %c\n", veri.ch);
-    veri.flag = 1;
-    printf("flag = %d\n", veri.flag);
-    veri.ondalik = 1.5;
-    printf("f = %f\n", veri.ondalik);
+    printf("enter your name; ");
+    scanf("%s",veri.name);
+    printf("enter your surname; ");
+    scanf("%s",veri.surname);
+    printf("enter your age; ");
+    scanf("%d",&veri.age);
+    
+    if(
+    strcmp (veri.name,"sude")==0 &&
+    strcmp (veri.surname,"öztaş")==0 &&
+    veri.age==19){
+        printf("welcome sude");
+}
+    else if(strcmp (veri.name,"sude")!=0 &&
+    strcmp (veri.surname,"öztaş")!=0){
+        printf("you are not sude");
+    }
+    
+    
     return 0;
 }
-  

@@ -18,6 +18,3 @@ int main(){
     return 0;
 }
 
-
-with open('input.txt') as f:
-    lines = f.readlines()

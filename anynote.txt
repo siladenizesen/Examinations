@@ -1,0 +1,11 @@
+fgetc()– This function is used to read a single character from the file.
+fgets()– This function is used to read strings from files.
+fscanf()– This function is used to read formatted input from a file.
+fread()– This function is used to read the block of raw bytes from files. This is used to read binary files.
+Steps To Read A File:
+
+Open a file using the function fopen() and store the reference of the file in a FILE pointer.
+Read contents of the file using any of these functions fgetc(), fgets(), fscanf(), or fread().
+File close the file using the function fclose().
+
+AKif
